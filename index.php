@@ -1,3 +1,17 @@
+<?php 
+
+function passwordGenerator($characters) 
+{
+  $array = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz!@#$%&*_"';
+  return substr(str_shuffle($array), 0, $characters);
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,9 +24,16 @@
     <h1>Password Generator</h1>
 
     <form action="index.php" method="GET">
-        <input type="text" name='passwordGenerator' placeholder='Genera la tua password'>
-        <button type="submit">Genera</button>
+        <button type="submit">Genera la tua Password</button>
     </form>
 
+    <p>
+        <?php 
+        echo passwordGenerator(15);
+        ?>
+    </p>
+
+    
+    
 </body>
 </html>
